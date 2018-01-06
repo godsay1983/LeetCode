@@ -46,5 +46,13 @@ namespace UnitTestLeetCode
 			int expected = 3;
 			Assert::AreEqual(expected, result);
 		}
+
+		TEST_METHOD(lengthOfLongestSubstring2)
+		{
+			// TODO: 在此输入测试代码
+			int result = Solution().lengthOfLongestSubstring2("abcabcbb");
+			int expected = 3;
+			Assert::AreEqual(expected, result);
+		}
 	};
 }

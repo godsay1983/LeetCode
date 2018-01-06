@@ -1,6 +1,7 @@
 ﻿#include "Solution.h"
 #include <set>
 #include <algorithm>
+#include <map>
 
 std::vector<int> Solution::twoSum(std::vector<int>& nums, int target)
 {
@@ -60,6 +61,23 @@ int Solution::lengthOfLongestSubstring(std::string s)
 			ch.erase(s[i]);
 			i++;
 		}
+	}
+	return ans;
+}
+
+int Solution::lengthOfLongestSubstring2(std::string s)
+{
+	int n = s.length();
+	int ans = 0;
+	std::map<char, int> m;
+	for (int i = 0, j = 0; j < n; ++j)
+	{
+		if (m.find(s[j]) != m.end())
+		{
+			i = std::max(m.at(s[j]), i);
+		}
+		ans = std::max(ans, j - i + 1);
+		m[s[j]] = j + 1;
 	}
 	return ans;
 }
