@@ -19,4 +19,7 @@ public:
 	ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
 	int lengthOfLongestSubstring(std::string s);
 	int lengthOfLongestSubstring2(std::string s);
+	double findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2);
+	double findKthNumber(std::vector<int> nums1, std::vector<int> nums2, int k);
+	double findMedianSortedArrays2(std::vector<int>& nums1, std::vector<int>& nums2);
 };

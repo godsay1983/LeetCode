@@ -81,3 +81,67 @@ int Solution::lengthOfLongestSubstring2(std::string s)
 	}
 	return ans;
 }
+
+double Solution::findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2)
+{
+	std::vector<int> nums;
+	nums.reserve(int(nums1.size() + nums2.size()));
+	nums.insert(nums.end(), nums1.begin(), nums1.end());
+	nums.insert(nums.end(), nums2.begin(), nums2.end());
+	sort(nums.begin(), nums.end());
+	int n = nums.size();
+	if (n % 2 == 0)
+	{
+		return (nums[n / 2 - 1] + nums[n / 2]) / 2.0;
+	}
+	else
+	{
+		return nums[n / 2];
+	}
+}
+
+double Solution::findKthNumber(std::vector<int> nums1, std::vector<int> nums2, int k)
+{
+	if (nums1.size() > nums2.size())
+	{
+		return findKthNumber(nums2, nums1, k);
+	}
+	if (nums1.size() == 0)
+	{
+		return nums2[k - 1];
+	}
+	if (k == 1)
+	{
+		return std::min(nums1[0], nums2[0]);
+	}
+	int p1 = std::min(k / 2, int(nums1.size()));
+	int p2 = k - p1;
+
+	if (nums1[p1 - 1] < nums2[p2 - 1])
+	{
+		nums1.assign(nums1.begin() + p1, nums1.end());
+		return findKthNumber(nums1, nums2, k - p1);
+	}
+	else if (nums1[p1 - 1] > nums2[p2 - 1])
+	{
+		nums2.assign(nums2.begin() + p2, nums2.end());
+		return findKthNumber(nums1, nums2, k - p2);
+	}
+	else
+	{
+		return nums1[p1 - 1];
+	}
+}
+
+double Solution::findMedianSortedArrays2(std::vector<int>& nums1, std::vector<int>& nums2)
+{
+	int total = nums1.size() + nums2.size();
+	if (total % 2 != 0)
+	{
+		return findKthNumber(nums1, nums2, total / 2 + 1);
+	}
+	else
+	{
+		return (findKthNumber(nums1, nums2, total / 2) + findKthNumber(nums1, nums2, total / 2 + 1)) / 2.0;
+	}
+}

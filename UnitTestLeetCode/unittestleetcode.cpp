@@ -54,5 +54,25 @@ namespace UnitTestLeetCode
 			int expected = 3;
 			Assert::AreEqual(expected, result);
 		}
+
+		TEST_METHOD(findMedianSortedArrays)
+		{
+			// TODO: 在此输入测试代码
+			std::vector<int> nums1 = {1, 2};
+			std::vector<int> nums2 = {3, 4};
+			double result = Solution().findMedianSortedArrays(nums1, nums2);
+			double expected = 2.5;
+			Assert::AreEqual(expected, result);
+		}
+
+		TEST_METHOD(findMedianSortedArrays2)
+		{
+			// TODO: 在此输入测试代码
+			std::vector<int> nums1 = { 1, 2 };
+			std::vector<int> nums2 = { 3, 4 };
+			double result = Solution().findMedianSortedArrays2(nums1, nums2);
+			double expected = 2.5;
+			Assert::AreEqual(expected, result);
+		}
 	};
 }
