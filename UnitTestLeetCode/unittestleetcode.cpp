@@ -18,6 +18,15 @@ namespace UnitTestLeetCode
 			Assert::IsTrue(expected == result);
 		}
 
+		TEST_METHOD(twoSum2)
+		{
+			// TODO: 在此输入测试代码
+			std::vector<int> nums = { 2, 7, 11, 15 };
+			std::vector<int> result = Solution().twoSum2(nums, 9);
+			std::vector<int> expected = { 0, 1 };
+			Assert::IsTrue(expected == result);
+		}
+
 		TEST_METHOD(addTwoNumbers)
 		{
 			// TODO: 在此输入测试代码

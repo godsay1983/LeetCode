@@ -21,6 +21,21 @@ std::vector<int> Solution::twoSum(std::vector<int>& nums, int target)
 	return result;
 }
 
+std::vector<int> Solution::twoSum2(std::vector<int>& nums, int target)
+{
+	std::map<int, int> m;
+	for (int i = 0; i < nums.size(); ++i)
+	{
+		int complement = target - nums[i];
+		if (m.find(complement) != m.end())
+		{
+			return {m[complement], i};
+		}
+		m[nums[i]] = i;
+	}
+	return {};
+}
+
 ListNode* Solution::addTwoNumbers(ListNode* l1, ListNode* l2)
 {
 	ListNode* res = new ListNode(-1);
