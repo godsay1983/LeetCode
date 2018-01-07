@@ -23,4 +23,7 @@ public:
 	double findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2);
 	double findKthNumber(std::vector<int> nums1, std::vector<int> nums2, int k);
 	double findMedianSortedArrays2(std::vector<int>& nums1, std::vector<int>& nums2);
+	std::string longestPalindrome(std::string s);
+	int expandAroundCenter(std::string s, int left, int right);
+	std::string longestPalindrome2(std::string s);
 };

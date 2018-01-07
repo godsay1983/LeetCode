@@ -160,3 +160,58 @@ double Solution::findMedianSortedArrays2(std::vector<int>& nums1, std::vector<in
 		return (findKthNumber(nums1, nums2, total / 2) + findKthNumber(nums1, nums2, total / 2 + 1)) / 2.0;
 	}
 }
+
+std::string Solution::longestPalindrome(std::string s)
+{
+	if (s.length() <= 1)
+	{
+		return s;
+	}
+	int length = 0;
+	std::string result;
+	for (int i = 0; i < s.length() - 1; ++i)
+	{
+		for (int j = i; j < s.length(); ++j)
+		{
+			std::string subs = s.substr(i, j - i + 1);
+			std::string reverseSubs = subs;
+			std::reverse(reverseSubs.begin(), reverseSubs.end());
+			if (subs == reverseSubs && subs.length() > length)
+			{
+				length = subs.length();
+				result = subs;
+			}
+		}
+	}
+	return result;
+}
+
+int Solution::expandAroundCenter(std::string s, int left, int right)
+{
+	int L = left;
+	int R = right;
+	while (L >= 0 && R < s.length() && s[L] == s[R])
+	{
+		L--;
+		R++;
+	}
+	return R - L - 1;
+}
+
+std::string Solution::longestPalindrome2(std::string s)
+{
+	int start = 0;
+	int end = 0;
+	for (int i = 0; i < s.length(); ++i)
+	{
+		int len1 = expandAroundCenter(s, i, i);
+		int len2 = expandAroundCenter(s, i, i + 1);
+		int len = std::max(len1, len2);
+		if (len > end - start)
+		{
+			start = i - (len - 1) / 2;
+			end = i + len / 2;
+		}
+	}
+	return s.substr(start, end - start + 1);
+}

@@ -83,5 +83,23 @@ namespace UnitTestLeetCode
 			double expected = 2.5;
 			Assert::AreEqual(expected, result);
 		}
+
+		TEST_METHOD(longestPalindrome)
+		{
+			// TODO: 在此输入测试代码
+			std::string str = "abcda";
+			std::string result = Solution().longestPalindrome(str);
+			std::string expected = "a";
+			Assert::AreEqual(expected, result);
+		}
+
+		TEST_METHOD(longestPalindrome2)
+		{
+			// TODO: 在此输入测试代码
+			std::string str = "abbaab";
+			std::string result = Solution().longestPalindrome2(str);
+			std::string expected = "baab";
+			Assert::AreEqual(expected, result);
+		}
 	};
 }
