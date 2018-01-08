@@ -215,3 +215,44 @@ std::string Solution::longestPalindrome2(std::string s)
 	}
 	return s.substr(start, end - start + 1);
 }
+
+std::string Solution::convert(std::string s, int numRows)
+{
+	if (numRows <= 1 || s.length() == 0)
+	{
+		return s;
+	}
+
+	std::string res = "";
+	int len = s.length();
+	for (int i = 0; i < len && i < numRows; ++i)
+	{
+		int indx = i;
+		res += s[indx];
+
+		for (int k = 1; indx < len; ++k)
+		{
+			if (i == 0 || i == numRows - 1)
+			{
+				indx += 2 * numRows - 2;
+			}
+			else
+			{
+				if (k & 0x01)
+				{
+					indx += 2 * (numRows - 1 - i);
+				}
+				else
+				{
+					indx += 2 * i;
+				}
+			}
+
+			if (indx < len)
+			{
+				res += s[indx];
+			}
+		}
+	}
+	return res;
+}

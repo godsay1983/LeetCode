@@ -101,5 +101,14 @@ namespace UnitTestLeetCode
 			std::string expected = "baab";
 			Assert::AreEqual(expected, result);
 		}
+
+		TEST_METHOD(convert)
+		{
+			// TODO: 在此输入测试代码
+			std::string str = "PAYPALISHIRING";
+			std::string result = Solution().convert(str, 3);
+			std::string expected = "PAHNAPLSIIGYIR";
+			Assert::AreEqual(expected, result);
+		}
 	};
 }
