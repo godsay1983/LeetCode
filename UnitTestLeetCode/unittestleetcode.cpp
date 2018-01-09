@@ -110,5 +110,13 @@ namespace UnitTestLeetCode
 			std::string expected = "PAHNAPLSIIGYIR";
 			Assert::AreEqual(expected, result);
 		}
+
+		TEST_METHOD(reverse)
+		{
+			// TODO: 在此输入测试代码
+			int result = Solution().reverse(123);
+			int expected = 321;
+			Assert::AreEqual(expected, result);
+		}
 	};
 }

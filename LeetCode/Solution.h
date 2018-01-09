@@ -27,4 +27,5 @@ public:
 	int expandAroundCenter(std::string s, int left, int right);
 	std::string longestPalindrome2(std::string s);
 	std::string convert(std::string s, int numRows);
+	int reverse(int x);
 };
