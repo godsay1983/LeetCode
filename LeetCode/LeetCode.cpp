@@ -1,18 +1,16 @@
 ﻿// LeetCode.cpp: 定义控制台应用程序的入口点。
 //
-
-
 #include "Solution.h"
 
 int main()
 {
 	Solution solution;
-	std::vector<int> nums;
+	vector<int> nums;
 	nums.push_back(2);
 	nums.push_back(7);
 	nums.push_back(11);
 	nums.push_back(15);
-	std::vector<int> result = solution.twoSum(nums, 9);
+	vector<int> result = solution.twoSum(nums, 9);
 
 	ListNode *l1 = new ListNode(2);
 	l1->next = new ListNode(4);

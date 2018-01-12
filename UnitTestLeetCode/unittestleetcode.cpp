@@ -117,6 +117,14 @@ namespace UnitTestLeetCode
 			int result = Solution().reverse(123);
 			int expected = 321;
 			Assert::AreEqual(expected, result);
+		}		
+		
+		TEST_METHOD(myAtoi)
+		{
+			// TODO: 在此输入测试代码
+			int result = Solution().myAtoi("-234");
+			int expected = -234;
+			Assert::AreEqual(expected, result);
 		}
 	};
 }

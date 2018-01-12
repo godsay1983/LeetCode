@@ -3,9 +3,9 @@
 #include <algorithm>
 #include <map>
 
-std::vector<int> Solution::twoSum(std::vector<int>& nums, int target)
+vector<int> Solution::twoSum(vector<int>& nums, int target)
 {
-	std::vector<int> result;
+	vector<int> result;
 	for (int i = 0; i < nums.size() - 1; ++i)
 	{
 		for (int j = i + 1; j < nums.size(); ++j)
@@ -21,9 +21,9 @@ std::vector<int> Solution::twoSum(std::vector<int>& nums, int target)
 	return result;
 }
 
-std::vector<int> Solution::twoSum2(std::vector<int>& nums, int target)
+vector<int> Solution::twoSum2(vector<int>& nums, int target)
 {
-	std::map<int, int> m;
+	map<int, int> m;
 	for (int i = 0; i < nums.size(); ++i)
 	{
 		int complement = target - nums[i];
@@ -56,20 +56,20 @@ ListNode* Solution::addTwoNumbers(ListNode* l1, ListNode* l2)
 	return res->next;
 }
 
-int Solution::lengthOfLongestSubstring(std::string s)
+int Solution::lengthOfLongestSubstring(string s)
 {
 	int n = s.length();
 	int ans = 0;
 	int i = 0;
 	int j = 0;
-	std::set<char> ch;
+	set<char> ch;
 	while (i < n && j < n)
 	{
 		if (ch.find(s[j]) == ch.end())
 		{
 			ch.insert(s[j]);
 			j++;
-			ans = std::max(ans, j - i);
+			ans = max(ans, j - i);
 		}
 		else
 		{
@@ -80,26 +80,26 @@ int Solution::lengthOfLongestSubstring(std::string s)
 	return ans;
 }
 
-int Solution::lengthOfLongestSubstring2(std::string s)
+int Solution::lengthOfLongestSubstring2(string s)
 {
 	int n = s.length();
 	int ans = 0;
-	std::map<char, int> m;
+	map<char, int> m;
 	for (int i = 0, j = 0; j < n; ++j)
 	{
 		if (m.find(s[j]) != m.end())
 		{
-			i = std::max(m.at(s[j]), i);
+			i = max(m.at(s[j]), i);
 		}
-		ans = std::max(ans, j - i + 1);
+		ans = max(ans, j - i + 1);
 		m[s[j]] = j + 1;
 	}
 	return ans;
 }
 
-double Solution::findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2)
+double Solution::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 {
-	std::vector<int> nums;
+	vector<int> nums;
 	nums.reserve(int(nums1.size() + nums2.size()));
 	nums.insert(nums.end(), nums1.begin(), nums1.end());
 	nums.insert(nums.end(), nums2.begin(), nums2.end());
@@ -115,7 +115,7 @@ double Solution::findMedianSortedArrays(std::vector<int>& nums1, std::vector<int
 	}
 }
 
-double Solution::findKthNumber(std::vector<int> nums1, std::vector<int> nums2, int k)
+double Solution::findKthNumber(vector<int> nums1, vector<int> nums2, int k)
 {
 	if (nums1.size() > nums2.size())
 	{
@@ -127,9 +127,9 @@ double Solution::findKthNumber(std::vector<int> nums1, std::vector<int> nums2, i
 	}
 	if (k == 1)
 	{
-		return std::min(nums1[0], nums2[0]);
+		return min(nums1[0], nums2[0]);
 	}
-	int p1 = std::min(k / 2, int(nums1.size()));
+	int p1 = min(k / 2, int(nums1.size()));
 	int p2 = k - p1;
 
 	if (nums1[p1 - 1] < nums2[p2 - 1])
@@ -148,7 +148,7 @@ double Solution::findKthNumber(std::vector<int> nums1, std::vector<int> nums2, i
 	}
 }
 
-double Solution::findMedianSortedArrays2(std::vector<int>& nums1, std::vector<int>& nums2)
+double Solution::findMedianSortedArrays2(vector<int>& nums1, vector<int>& nums2)
 {
 	int total = nums1.size() + nums2.size();
 	if (total % 2 != 0)
@@ -161,20 +161,20 @@ double Solution::findMedianSortedArrays2(std::vector<int>& nums1, std::vector<in
 	}
 }
 
-std::string Solution::longestPalindrome(std::string s)
+string Solution::longestPalindrome(string s)
 {
 	if (s.length() <= 1)
 	{
 		return s;
 	}
 	int length = 0;
-	std::string result;
+	string result;
 	for (int i = 0; i < s.length() - 1; ++i)
 	{
 		for (int j = i; j < s.length(); ++j)
 		{
-			std::string subs = s.substr(i, j - i + 1);
-			std::string reverseSubs = subs;
+			string subs = s.substr(i, j - i + 1);
+			string reverseSubs = subs;
 			std::reverse(reverseSubs.begin(), reverseSubs.end());
 			if (subs == reverseSubs && subs.length() > length)
 			{
@@ -186,7 +186,7 @@ std::string Solution::longestPalindrome(std::string s)
 	return result;
 }
 
-int Solution::expandAroundCenter(std::string s, int left, int right)
+int Solution::expandAroundCenter(string s, int left, int right)
 {
 	int L = left;
 	int R = right;
@@ -198,7 +198,7 @@ int Solution::expandAroundCenter(std::string s, int left, int right)
 	return R - L - 1;
 }
 
-std::string Solution::longestPalindrome2(std::string s)
+string Solution::longestPalindrome2(string s)
 {
 	int start = 0;
 	int end = 0;
@@ -206,7 +206,7 @@ std::string Solution::longestPalindrome2(std::string s)
 	{
 		int len1 = expandAroundCenter(s, i, i);
 		int len2 = expandAroundCenter(s, i, i + 1);
-		int len = std::max(len1, len2);
+		int len = max(len1, len2);
 		if (len > end - start)
 		{
 			start = i - (len - 1) / 2;
@@ -216,14 +216,14 @@ std::string Solution::longestPalindrome2(std::string s)
 	return s.substr(start, end - start + 1);
 }
 
-std::string Solution::convert(std::string s, int numRows)
+string Solution::convert(string s, int numRows)
 {
 	if (numRows <= 1 || s.length() == 0)
 	{
 		return s;
 	}
 
-	std::string res = "";
+	string res = "";
 	int len = s.length();
 	for (int i = 0; i < len && i < numRows; ++i)
 	{
@@ -272,4 +272,33 @@ int Solution::reverse(int x)
 		x = x / 10;
 	}
 	return result;
+}
+
+int Solution::myAtoi(string str)
+{
+	if (str.empty())
+	{
+		return 0;
+	}
+	int sign = 1;
+	int base = 0;
+	int i = 0;
+	int n = str.length();
+	while (i < n && str[i] == ' ')
+	{
+		++i;
+	}
+	if (str[i] == '+' || str[i] == '-')
+	{
+		sign = (str[i++] == '+') ? 1 : -1;
+	}
+	while (i < n && str[i] >= '0' && str[i] <= '9')
+	{
+		if (base > INT_MAX / 10 || (base == INT_MAX / 10 && str[i] - '0' > 7))
+		{
+			return (sign == 1) ? INT_MAX : INT_MIN;
+		}
+		base = 10 * base + (str[i++] - '0');
+	}
+	return base * sign;
 }
