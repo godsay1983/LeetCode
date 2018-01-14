@@ -31,4 +31,5 @@ public:
 	string convert(string s, int numRows);
 	int reverse(int x);
 	int myAtoi(string str);
+	bool isPalindrome(int x);
 };

@@ -126,5 +126,13 @@ namespace UnitTestLeetCode
 			int expected = -234;
 			Assert::AreEqual(expected, result);
 		}
+
+		TEST_METHOD(isPalindrome)
+		{
+			// TODO: 在此输入测试代码
+			bool result = Solution().isPalindrome(2332);
+			bool expected = true;
+			Assert::AreEqual(expected, result);
+		}
 	};
 }
