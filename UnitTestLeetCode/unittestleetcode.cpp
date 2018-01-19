@@ -134,5 +134,13 @@ namespace UnitTestLeetCode
 			bool expected = true;
 			Assert::AreEqual(expected, result);
 		}
+
+		TEST_METHOD(isMatch)
+		{
+			// TODO: 在此输入测试代码
+			bool result = Solution().isMatch("aab", "c*a*b");
+			bool expected = true;
+			Assert::AreEqual(expected, result);
+		}
 	};
 }

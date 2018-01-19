@@ -16,6 +16,7 @@ struct ListNode
 
 class Solution
 {
+	static const int FRONT = -1;
 public:
 	vector<int> twoSum(vector<int>& nums, int target);
 	vector<int> twoSum2(vector<int>& nums, int target);
@@ -32,4 +33,6 @@ public:
 	int reverse(int x);
 	int myAtoi(string str);
 	bool isPalindrome(int x);
+	bool isMatch(string s, string p);
+	bool myMatch(string s, int i, string p, int j);
 };
