@@ -35,4 +35,6 @@ public:
 	bool isPalindrome(int x);
 	bool isMatch(string s, string p);
 	bool myMatch(string s, int i, string p, int j);
+	int maxArea(vector<int>& height);
+	int maxArea2(vector<int>& height);
 };

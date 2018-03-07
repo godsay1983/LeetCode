@@ -21,9 +21,9 @@ namespace UnitTestLeetCode
 		TEST_METHOD(twoSum2)
 		{
 			// TODO: 在此输入测试代码
-			std::vector<int> nums = { 2, 7, 11, 15 };
+			std::vector<int> nums = {2, 7, 11, 15};
 			std::vector<int> result = Solution().twoSum2(nums, 9);
-			std::vector<int> expected = { 0, 1 };
+			std::vector<int> expected = {0, 1};
 			Assert::IsTrue(expected == result);
 		}
 
@@ -77,8 +77,8 @@ namespace UnitTestLeetCode
 		TEST_METHOD(findMedianSortedArrays2)
 		{
 			// TODO: 在此输入测试代码
-			std::vector<int> nums1 = { 1, 2 };
-			std::vector<int> nums2 = { 3, 4 };
+			std::vector<int> nums1 = {1, 2};
+			std::vector<int> nums2 = {3, 4};
 			double result = Solution().findMedianSortedArrays2(nums1, nums2);
 			double expected = 2.5;
 			Assert::AreEqual(expected, result);
@@ -117,8 +117,8 @@ namespace UnitTestLeetCode
 			int result = Solution().reverse(123);
 			int expected = 321;
 			Assert::AreEqual(expected, result);
-		}		
-		
+		}
+
 		TEST_METHOD(myAtoi)
 		{
 			// TODO: 在此输入测试代码
@@ -140,6 +140,24 @@ namespace UnitTestLeetCode
 			// TODO: 在此输入测试代码
 			bool result = Solution().isMatch("aab", "c*a*b");
 			bool expected = true;
+			Assert::AreEqual(expected, result);
+		}
+
+		TEST_METHOD(maxArea)
+		{
+			// TODO: 在此输入测试代码
+			vector<int> data = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+			int result = Solution().maxArea(data);
+			int expected = 49;
+			Assert::AreEqual(expected, result);
+		}
+
+		TEST_METHOD(maxArea2)
+		{
+			// TODO: 在此输入测试代码
+			vector<int> data = { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+			int result = Solution().maxArea2(data);
+			int expected = 49;
 			Assert::AreEqual(expected, result);
 		}
 	};

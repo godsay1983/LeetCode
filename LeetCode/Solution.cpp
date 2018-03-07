@@ -371,3 +371,37 @@ bool Solution::myMatch(string s, int i, string p, int j)
 	}
 	return false;
 }
+
+int Solution::maxArea(vector<int>& height)
+{
+	int maxArea = 0;
+	for (int i = 0; i < height.size(); ++i)
+	{
+		for (int j = i + 1; j < height.size(); ++j)
+		{
+			maxArea = max(maxArea, min(height[i], height[j]) * (j - i));
+		}
+	}
+	return maxArea;
+}
+
+int Solution::maxArea2(vector<int>& height)
+{
+	int left = 0;
+	int right = height.size() - 1;
+
+	int maxArea = 0;
+	while (left < right)
+	{
+		maxArea = max(maxArea, min(height[left], height[right]) * (right - left));
+		if (height[left] < height[right])
+		{
+			left++;
+		}
+		else
+		{
+			right--;
+		}
+	}
+	return maxArea;
+}
