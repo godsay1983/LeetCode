@@ -37,4 +37,5 @@ public:
 	bool myMatch(string s, int i, string p, int j);
 	int maxArea(vector<int>& height);
 	int maxArea2(vector<int>& height);
+	string intToRoman(int num);
 };

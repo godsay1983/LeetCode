@@ -160,5 +160,14 @@ namespace UnitTestLeetCode
 			int expected = 49;
 			Assert::AreEqual(expected, result);
 		}
+
+		TEST_METHOD(intToRoman)
+		{
+			// TODO: 在此输入测试代码
+			int data = 1980;
+			string result = Solution().intToRoman(data);
+			string expected = "MCMLXXX";
+			Assert::AreEqual(expected, result);
+		}
 	};
 }
