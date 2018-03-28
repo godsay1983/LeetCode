@@ -39,4 +39,5 @@ public:
 	int maxArea2(vector<int>& height);
 	string intToRoman(int num);
 	int aplusb(int a, int b);
+	long long trailingZeros(long long n);
 };

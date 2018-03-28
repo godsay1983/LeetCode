@@ -178,6 +178,15 @@ namespace UnitTestLeetCode
 			int result = Solution().aplusb(a, b);
 			int expected = 12;
 			Assert::AreEqual(expected, result);
+		}		
+		
+		TEST_METHOD(trailingZeros)
+		{
+			// TODO: 在此输入测试代码
+			int num = 106;
+			int result = Solution().trailingZeros(num);
+			int expected = 25;
+			Assert::AreEqual(expected, result);
 		}
 	};
 }

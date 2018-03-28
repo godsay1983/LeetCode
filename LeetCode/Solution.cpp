@@ -429,3 +429,14 @@ int Solution::aplusb(int a, int b)
 	int tmpb = (a & b) << 1;
 	return aplusb(tmpa, tmpb);
 }
+
+long long Solution::trailingZeros(long long n)
+{
+	long long count = 0;
+	while (n > 0)
+	{
+		count += n / 5;
+		n /= 5;
+	}
+	return count;
+}
