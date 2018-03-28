@@ -38,4 +38,5 @@ public:
 	int maxArea(vector<int>& height);
 	int maxArea2(vector<int>& height);
 	string intToRoman(int num);
+	int aplusb(int a, int b);
 };

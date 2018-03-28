@@ -169,5 +169,15 @@ namespace UnitTestLeetCode
 			string expected = "MCMLXXX";
 			Assert::AreEqual(expected, result);
 		}
+
+		TEST_METHOD(aplusb)
+		{
+			// TODO: 在此输入测试代码
+			int a = 5;
+			int b = 7;
+			int result = Solution().aplusb(a, b);
+			int expected = 12;
+			Assert::AreEqual(expected, result);
+		}
 	};
 }
