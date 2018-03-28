@@ -440,3 +440,25 @@ long long Solution::trailingZeros(long long n)
 	}
 	return count;
 }
+
+int Solution::digitCounts(int k, int n)
+{
+	int count = 0;
+	if (k == 0)
+	{
+		count++;
+	}
+	for (int i = 0; i <= n; ++i)
+	{
+		int num = i;
+		while (num > 0)
+		{
+			if (num % 10 == k)
+			{
+				count++;
+			}
+			num /= 10;
+		}
+	}
+	return count;
+}

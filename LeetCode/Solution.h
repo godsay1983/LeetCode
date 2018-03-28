@@ -40,4 +40,5 @@ public:
 	string intToRoman(int num);
 	int aplusb(int a, int b);
 	long long trailingZeros(long long n);
+	int digitCounts(int k, int n);
 };

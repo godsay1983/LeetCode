@@ -187,6 +187,16 @@ namespace UnitTestLeetCode
 			int result = Solution().trailingZeros(num);
 			int expected = 25;
 			Assert::AreEqual(expected, result);
+		}		
+		
+		TEST_METHOD(digitCounts)
+		{
+			// TODO: 在此输入测试代码
+			int k = 1;
+			int n = 1;
+			int result = Solution().digitCounts(k, n);
+			int expected = 1;
+			Assert::AreEqual(expected, result);
 		}
 	};
 }
