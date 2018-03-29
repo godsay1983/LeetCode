@@ -197,6 +197,15 @@ namespace UnitTestLeetCode
 			int result = Solution().digitCounts(k, n);
 			int expected = 1;
 			Assert::AreEqual(expected, result);
+		}		
+		
+		TEST_METHOD(nthUglyNumber)
+		{
+			// TODO: 在此输入测试代码
+			int n = 41;
+			int result = Solution().nthUglyNumber(n);
+			int expected = 150;
+			Assert::AreEqual(expected, result);
 		}
 	};
 }

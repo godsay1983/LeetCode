@@ -41,4 +41,5 @@ public:
 	int aplusb(int a, int b);
 	long long trailingZeros(long long n);
 	int digitCounts(int k, int n);
+	int nthUglyNumber(int n);
 };

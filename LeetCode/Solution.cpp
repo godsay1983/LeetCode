@@ -2,6 +2,7 @@
 #include <set>
 #include <algorithm>
 #include <map>
+#include <sstream>
 
 vector<int> Solution::twoSum(vector<int>& nums, int target)
 {
@@ -408,10 +409,10 @@ int Solution::maxArea2(vector<int>& height)
 
 string Solution::intToRoman(int num)
 {
-	vector<string> M = { "", "M", "MM", "MMM" };
-	vector<string> C = { "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" };
-	vector<string> X = { "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" };
-	vector<string> I = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
+	vector<string> M = {"", "M", "MM", "MMM"};
+	vector<string> C = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+	vector<string> X = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+	vector<string> I = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
 	return M[num / 1000] + C[(num % 1000) / 100] + X[(num % 100) / 10] + I[num % 10];
 }
 
@@ -461,4 +462,33 @@ int Solution::digitCounts(int k, int n)
 		}
 	}
 	return count;
+}
+
+int Solution::nthUglyNumber(int n)
+{
+	int *ugly = new int[n];
+	ugly[0] = 1;
+	int ugly_2 = 0;
+	int ugly_3 = 0;
+	int ugly_5 = 0;
+	for (int i = 1; i < n; ++i)
+	{
+		int val = min(min(ugly[ugly_2] * 2, ugly[ugly_3] * 3), ugly[ugly_5] * 5);
+		if (val == ugly[ugly_2] * 2)
+		{
+			ugly_2++;
+		}
+		if (val == ugly[ugly_3] * 3)
+		{
+			ugly_3++;
+		}
+		if (val == ugly[ugly_5] * 5)
+		{
+			ugly_5++;
+		}
+		ugly[i] = val;
+	}
+	int result =  ugly[n - 1];
+	delete[] ugly;
+	return result;
 }
