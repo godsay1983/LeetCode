@@ -155,7 +155,7 @@ namespace UnitTestLeetCode
 		TEST_METHOD(maxArea2)
 		{
 			// TODO: 在此输入测试代码
-			vector<int> data = { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+			vector<int> data = {1, 8, 6, 2, 5, 4, 8, 3, 7};
 			int result = Solution().maxArea2(data);
 			int expected = 49;
 			Assert::AreEqual(expected, result);
@@ -178,8 +178,8 @@ namespace UnitTestLeetCode
 			int result = Solution().aplusb(a, b);
 			int expected = 12;
 			Assert::AreEqual(expected, result);
-		}		
-		
+		}
+
 		TEST_METHOD(trailingZeros)
 		{
 			// TODO: 在此输入测试代码
@@ -187,8 +187,8 @@ namespace UnitTestLeetCode
 			int result = Solution().trailingZeros(num);
 			int expected = 25;
 			Assert::AreEqual(expected, result);
-		}		
-		
+		}
+
 		TEST_METHOD(digitCounts)
 		{
 			// TODO: 在此输入测试代码
@@ -197,14 +197,24 @@ namespace UnitTestLeetCode
 			int result = Solution().digitCounts(k, n);
 			int expected = 1;
 			Assert::AreEqual(expected, result);
-		}		
-		
+		}
+
 		TEST_METHOD(nthUglyNumber)
 		{
 			// TODO: 在此输入测试代码
 			int n = 41;
 			int result = Solution().nthUglyNumber(n);
 			int expected = 150;
+			Assert::AreEqual(expected, result);
+		}
+
+		TEST_METHOD(kthLargestElement)
+		{
+			// TODO: 在此输入测试代码
+			vector<int> nums = {1, 2, 3, 4, 5, 6, 8, 9, 10, 7};
+			int n = 10;
+			int result = Solution().kthLargestElement(3, nums);
+			int expected = 1;
 			Assert::AreEqual(expected, result);
 		}
 	};

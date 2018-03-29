@@ -466,7 +466,7 @@ int Solution::digitCounts(int k, int n)
 
 int Solution::nthUglyNumber(int n)
 {
-	int *ugly = new int[n];
+	int* ugly = new int[n];
 	ugly[0] = 1;
 	int ugly_2 = 0;
 	int ugly_3 = 0;
@@ -488,7 +488,24 @@ int Solution::nthUglyNumber(int n)
 		}
 		ugly[i] = val;
 	}
-	int result =  ugly[n - 1];
+	int result = ugly[n - 1];
 	delete[] ugly;
 	return result;
+}
+
+int Solution::kthLargestElement(int n, vector<int>& nums)
+{
+	for (int i = 0; i < nums.size() - 1; ++i)
+	{
+		for (int j = i + 1; j < nums.size(); ++j)
+		{
+			if (nums[i] < nums[j])
+			{
+				int temp = nums[i];
+				nums[i] = nums[j];
+				nums[j] = temp;
+			}
+		}
+	}
+	return nums[n - 1];
 }
