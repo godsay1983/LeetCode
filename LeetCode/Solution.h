@@ -43,6 +43,9 @@ public:
 	int digitCounts(int k, int n);
 	int nthUglyNumber(int n);
 	int kthLargestElement(int n, vector<int> &nums);
+	int kthLargestElement1(int n, vector<int> &nums);
+	void quickSort(int i, int j, vector<int> &nums);
 	vector<int> divisorCounts(int l, int r);
 	int getFirstNum(int n);
+	vector<int> mergeSortedArray(vector<int> &A, vector<int> &B);
 };

@@ -510,6 +510,52 @@ int Solution::kthLargestElement(int n, vector<int>& nums)
 	return nums[n - 1];
 }
 
+int Solution::kthLargestElement1(int n, vector<int>& nums)
+{
+	quickSort(0, nums.size() - 1, nums);
+	return nums[nums.size() - n];
+}
+
+void Solution::quickSort(int left, int right, vector<int>& nums)
+{
+	int i;
+	int j;
+	int t;
+	int temp;
+
+	if (left > right)
+	{
+		return;
+	}
+
+	temp = nums[left];
+	i = left;
+	j = right;
+	while (i != j)
+	{
+		while (nums[j] >= temp && i < j)
+		{
+			j--;
+		}
+		while (nums[i] <= temp && i < j)
+		{
+			i++;
+		}
+		if (i < j)
+		{
+			t = nums[i];
+			nums[i] = nums[j];
+			nums[j] = t;
+		}
+	}
+
+	nums[left] = nums[i];
+	nums[i] = temp;
+
+	quickSort(left, i - 1, nums);
+	quickSort(i + 1, right, nums);
+}
+
 vector<int> Solution::divisorCounts(int l, int r)
 {
 	int num = l;
@@ -541,4 +587,37 @@ int Solution::getFirstNum(int n)
 		num /= 10;
 	}
 	return num;
+}
+
+vector<int> Solution::mergeSortedArray(vector<int>& A, vector<int>& B)
+{
+	int m = A.size();
+	int n = B.size();
+	vector<int> C;
+	int i = 0;
+	int j = 0;
+
+	while (i < m && j < n)
+	{
+		if (A[i] < B[j])
+		{
+			C.push_back(A[i++]);
+		}
+		else
+		{
+			C.push_back(B[j++]);
+		}
+	}
+
+	while (i < m)
+	{
+		C.push_back(A[i++]);
+	}
+
+	while (j < n)
+	{
+		C.push_back(B[j++]);
+	}
+
+	return C;
 }

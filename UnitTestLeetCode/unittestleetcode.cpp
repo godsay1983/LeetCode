@@ -217,5 +217,26 @@ namespace UnitTestLeetCode
 			int expected = 1;
 			Assert::AreEqual(expected, result);
 		}
+
+		TEST_METHOD(kthLargestElement1)
+		{
+			// TODO: 在此输入测试代码
+			vector<int> nums = { 1, 2, 3, 4, 5, 6, 8, 9, 10, 7 };
+			int n = 10;
+			int result = Solution().kthLargestElement1(n, nums);
+			int expected = 1;
+			Assert::AreEqual(expected, result);
+		}
+		
+		TEST_METHOD(mergeSortedArray)
+		{
+			// TODO: 在此输入测试代码
+			vector<int> A = { 1, 2, 3, 4 };
+			vector<int> B = { 2, 4, 5, 6 };
+			vector<int> result = Solution().mergeSortedArray(A, B);
+//			vector<int> expected = { 1, 2, 2, 3, 4, 4, 5, 6 };
+			int expected = 3;
+			Assert::AreEqual(expected, result[3]);
+		}
 	};
 }
