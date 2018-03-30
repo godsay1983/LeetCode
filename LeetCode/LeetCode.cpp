@@ -1,6 +1,7 @@
 ﻿// LeetCode.cpp: 定义控制台应用程序的入口点。
 //
 #include "Solution.h"
+#include <iostream>
 
 int main()
 {
@@ -22,6 +23,11 @@ int main()
 
 	ListNode *l3 = solution.addTwoNumbers(l1, l2);
 
+	vector<int> divisorCounts = solution.divisorCounts(64, 8306);
+	for (int i = 0; i < divisorCounts.size(); ++i)
+	{
+		std::cout << divisorCounts[i] << std::endl;
+	}
     return 0;
 }
 

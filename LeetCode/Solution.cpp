@@ -509,3 +509,36 @@ int Solution::kthLargestElement(int n, vector<int>& nums)
 	}
 	return nums[n - 1];
 }
+
+vector<int> Solution::divisorCounts(int l, int r)
+{
+	int num = l;
+	vector<int> divisorCounts;
+	divisorCounts.assign(9, 0);
+	while (num <= r)
+	{
+		for (int i = 1; i * i <= num; ++i)
+		{
+			if (num % i == 0)
+			{
+				divisorCounts[getFirstNum(i) - 1]++;
+				if (num != i * i)
+				{
+					divisorCounts[getFirstNum((num / i)) - 1]++;
+				}
+			}
+		}
+		num++;
+	}
+	return divisorCounts;
+}
+
+int Solution::getFirstNum(int n)
+{
+	int num = n;
+	while (num >= 10)
+	{
+		num /= 10;
+	}
+	return num;
+}

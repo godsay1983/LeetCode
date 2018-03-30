@@ -213,7 +213,7 @@ namespace UnitTestLeetCode
 			// TODO: 在此输入测试代码
 			vector<int> nums = {1, 2, 3, 4, 5, 6, 8, 9, 10, 7};
 			int n = 10;
-			int result = Solution().kthLargestElement(3, nums);
+			int result = Solution().kthLargestElement(n, nums);
 			int expected = 1;
 			Assert::AreEqual(expected, result);
 		}

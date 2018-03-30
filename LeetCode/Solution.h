@@ -43,4 +43,6 @@ public:
 	int digitCounts(int k, int n);
 	int nthUglyNumber(int n);
 	int kthLargestElement(int n, vector<int> &nums);
+	vector<int> divisorCounts(int l, int r);
+	int getFirstNum(int n);
 };
