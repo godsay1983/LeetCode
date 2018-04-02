@@ -621,3 +621,54 @@ vector<int> Solution::mergeSortedArray(vector<int>& A, vector<int>& B)
 
 	return C;
 }
+
+string Solution::serialize(TreeNode* root)
+{
+	string s = "";
+	writeTree(s, root);
+	return s;
+}
+
+void Solution::writeTree(string& s, TreeNode* root)
+{
+	if (root == NULL)
+	{
+		s += "# ";
+		return;
+	}
+
+	s += to_string(root->val) + ' ';
+	writeTree(s, root->left);
+	writeTree(s, root->right);
+}
+
+TreeNode* Solution::deserialize(string& data)
+{
+	int pos = 0;
+	return readTree(data, pos);
+}
+
+TreeNode* Solution::readTree(string data, int& pos)
+{
+	if (data[pos] == '#')
+	{
+		pos += 2;
+		return NULL;
+	}
+
+	int nownum = 0;
+
+	while (data[pos] != ' ')
+	{
+		nownum = nownum * 10 + (data[pos] - '0');
+		pos++;
+	}
+
+	pos++;
+	TreeNode* nowNode = new TreeNode(nownum);
+
+	nowNode->left = readTree(data, pos);
+	nowNode->right = readTree(data, pos);
+
+	return nowNode;
+}

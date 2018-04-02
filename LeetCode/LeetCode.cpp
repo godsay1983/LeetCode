@@ -28,6 +28,16 @@ int main()
 	{
 		std::cout << divisorCounts[i] << std::endl;
 	}
+
+	TreeNode *node = new TreeNode(3);
+	node->left = new TreeNode(9);
+	node->right = new TreeNode(20);
+	node->right->left = new TreeNode(15);
+	node->right->right = new TreeNode(7);
+
+	string serial = solution.serialize(node);
+	std::cout << serial << endl;
+	TreeNode *node1 = solution.deserialize(serial);
     return 0;
 }
 

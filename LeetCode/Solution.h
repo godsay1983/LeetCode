@@ -14,6 +14,20 @@ struct ListNode
 	}
 };
 
+//Definition of TreeNode:
+class TreeNode
+{
+public:
+	int val;
+	TreeNode *left, *right;
+
+	TreeNode(int val)
+	{
+		this->val = val;
+		this->left = this->right = NULL;
+	}
+};
+
 class Solution
 {
 	static const int FRONT = -1;
@@ -42,10 +56,14 @@ public:
 	long long trailingZeros(long long n);
 	int digitCounts(int k, int n);
 	int nthUglyNumber(int n);
-	int kthLargestElement(int n, vector<int> &nums);
-	int kthLargestElement1(int n, vector<int> &nums);
-	void quickSort(int i, int j, vector<int> &nums);
+	int kthLargestElement(int n, vector<int>& nums);
+	int kthLargestElement1(int n, vector<int>& nums);
+	void quickSort(int i, int j, vector<int>& nums);
 	vector<int> divisorCounts(int l, int r);
 	int getFirstNum(int n);
-	vector<int> mergeSortedArray(vector<int> &A, vector<int> &B);
+	vector<int> mergeSortedArray(vector<int>& A, vector<int>& B);
+	string serialize(TreeNode* root);
+	void writeTree(string &s, TreeNode* root);
+	TreeNode* deserialize(string &data);
+	TreeNode* readTree(string data, int& pos);
 };
