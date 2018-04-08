@@ -237,6 +237,16 @@ namespace UnitTestLeetCode
 //			vector<int> expected = { 1, 2, 2, 3, 4, 4, 5, 6 };
 			int expected = 3;
 			Assert::AreEqual(expected, result[3]);
+		}		
+		
+		TEST_METHOD(rotateString)
+		{
+			// TODO: 在此输入测试代码
+			string str = "abcdefg";
+			int offset = 2;
+			Solution().rotateString(str, offset);
+			string expected = "fgabcde";
+			Assert::AreEqual(expected, str);
 		}
 	};
 }

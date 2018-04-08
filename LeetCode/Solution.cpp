@@ -672,3 +672,18 @@ TreeNode* Solution::readTree(string data, int& pos)
 
 	return nowNode;
 }
+
+void Solution::rotateString(string& str, int offset)
+{
+	if (str != "")
+	{
+		int length = str.length();
+		int time = offset % length;
+		for (int i = 0; i < time; ++i)
+		{
+			char c = str.back();
+			str.pop_back();
+			str.insert(0, 1, c);
+		}
+	}
+}

@@ -66,4 +66,5 @@ public:
 	void writeTree(string &s, TreeNode* root);
 	TreeNode* deserialize(string &data);
 	TreeNode* readTree(string data, int& pos);
+	void rotateString(string &str, int offset);
 };
