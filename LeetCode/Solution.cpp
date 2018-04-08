@@ -687,3 +687,28 @@ void Solution::rotateString(string& str, int offset)
 		}
 	}
 }
+
+vector<string> Solution::fizzBuzz(int n)
+{
+	vector<string> strs;
+	for (int i = 1; i <= n; ++i)
+	{
+		if (i % 3 == 0 && i % 5 == 0)
+		{
+			strs.push_back("fizz buzz");
+		}
+		else if (i % 3 == 0)
+		{
+			strs.push_back("fizz");
+		}
+		else if (i % 5 == 0)
+		{
+			strs.push_back("buzz");
+		}
+		else
+		{
+			strs.push_back(to_string(i));
+		}
+	}
+	return strs;
+}
