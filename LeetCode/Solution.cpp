@@ -734,3 +734,37 @@ void Solution::getTreeNodeValue(vector<int>& values, TreeNode* root, int k1, int
 	getTreeNodeValue(values, root->left, k1, k2);
 	getTreeNodeValue(values, root->right, k1 , k2);
 }
+
+int Solution::strStr(const char* source, const char* target)
+{
+	if (source == NULL || target == NULL)
+	{
+		return -1;
+	}
+	int sourceSize = strlen(source);
+	int targetSize = strlen(target);
+	if (targetSize == 0)
+	{
+		return 0;
+	}
+	if (sourceSize < targetSize)
+	{
+		return -1;
+	}
+	int i, j;
+	for (i = 0; i <= sourceSize - targetSize; ++i)
+	{
+		for (j = 0; j <= targetSize; ++j)
+		{
+			if (source[i + j] != target[j])
+			{
+				break;
+			}
+			if (j == targetSize - 1)
+			{
+				return i;
+			}
+		}
+	}
+	return -1;
+}

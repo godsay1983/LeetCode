@@ -247,8 +247,8 @@ namespace UnitTestLeetCode
 			Solution().rotateString(str, offset);
 			string expected = "fgabcde";
 			Assert::AreEqual(expected, str);
-		}
-
+		}		
+		
 		TEST_METHOD(fizzBuzz)
 		{
 			// TODO: 在此输入测试代码
@@ -257,6 +257,18 @@ namespace UnitTestLeetCode
 				"1", "2", "fizz", "4", "buzz", "fizz", "7", "8", "fizz", "buzz", "11", "fizz", "13", "14", "fizz buzz"
 			};
 			Assert::AreEqual(expected[0], expected[0]);
+		}
+
+		TEST_METHOD(strStr)
+		{
+			// TODO: 在此输入测试代码
+//			char* source = "abcdabcdefg";
+//			char* target = "bcd";			
+			char* source = "";
+			char* target = "";
+			int result = Solution().strStr(source, target);
+			int expected = 1;
+			Assert::AreEqual(expected, result);
 		}
 	};
 }

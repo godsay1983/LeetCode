@@ -70,4 +70,5 @@ public:
 	vector<string> fizzBuzz(int n);
 	vector<int> searchRange(TreeNode* root, int k1, int k2);
 	void getTreeNodeValue(vector<int>& values, TreeNode* root, int k1, int k2);
+	int strStr(const char *source, const char *target);
 };
