@@ -712,3 +712,25 @@ vector<string> Solution::fizzBuzz(int n)
 	}
 	return strs;
 }
+
+vector<int> Solution::searchRange(TreeNode* root, int k1, int k2)
+{
+	vector<int> values;
+	getTreeNodeValue(values, root, k1, k2);
+	std::sort(values.begin(), values.end());
+	return values;
+}
+
+void Solution::getTreeNodeValue(vector<int>& values, TreeNode* root, int k1, int k2)
+{
+	if (root == NULL)
+	{
+		return;
+	}
+	if (k1 <= root->val && k2 >= root->val)
+	{
+		values.push_back(root->val);
+	}
+	getTreeNodeValue(values, root->left, k1, k2);
+	getTreeNodeValue(values, root->right, k1 , k2);
+}

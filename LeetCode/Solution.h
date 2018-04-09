@@ -63,9 +63,11 @@ public:
 	int getFirstNum(int n);
 	vector<int> mergeSortedArray(vector<int>& A, vector<int>& B);
 	string serialize(TreeNode* root);
-	void writeTree(string &s, TreeNode* root);
-	TreeNode* deserialize(string &data);
+	void writeTree(string& s, TreeNode* root);
+	TreeNode* deserialize(string& data);
 	TreeNode* readTree(string data, int& pos);
-	void rotateString(string &str, int offset);
+	void rotateString(string& str, int offset);
 	vector<string> fizzBuzz(int n);
+	vector<int> searchRange(TreeNode* root, int k1, int k2);
+	void getTreeNodeValue(vector<int>& values, TreeNode* root, int k1, int k2);
 };

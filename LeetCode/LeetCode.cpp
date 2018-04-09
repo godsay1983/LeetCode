@@ -38,6 +38,9 @@ int main()
 	string serial = solution.serialize(node);
 	std::cout << serial << endl;
 	TreeNode *node1 = solution.deserialize(serial);
+
+	vector<int> values = solution.searchRange(node, 10, 22);
+
     return 0;
 }
 
