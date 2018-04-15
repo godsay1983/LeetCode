@@ -768,3 +768,29 @@ int Solution::strStr(const char* source, const char* target)
 	}
 	return -1;
 }
+
+int Solution::binarySearch(vector<int>& nums, int target)
+{
+	int left = 0;
+	int right = nums.size() - 1;
+	int center = -1;
+	int mid = -1;
+	while (left <= right)
+	{
+		center = left + (right - left) / 2;
+		if (nums[center] == target)
+		{
+			mid = center;
+		}
+		
+		if (nums[center] < target )
+		{
+			left = center + 1;
+		}
+		else
+		{
+			right = center - 1;
+		}
+	}
+	return mid;
+}

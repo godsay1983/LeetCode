@@ -267,7 +267,16 @@ namespace UnitTestLeetCode
 			char* source = "";
 			char* target = "";
 			int result = Solution().strStr(source, target);
-			int expected = 1;
+			int expected = 0;
+			Assert::AreEqual(expected, result);
+		}		
+		
+		TEST_METHOD(binarySearch)
+		{
+			// TODO: 在此输入测试代码		
+			vector<int> nums = { 1, 2, 3, 3, 4, 5, 10 };
+			int result = Solution().binarySearch(nums, 3);
+			int expected = 2;
 			Assert::AreEqual(expected, result);
 		}
 	};
