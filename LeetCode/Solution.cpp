@@ -732,7 +732,7 @@ void Solution::getTreeNodeValue(vector<int>& values, TreeNode* root, int k1, int
 		values.push_back(root->val);
 	}
 	getTreeNodeValue(values, root->left, k1, k2);
-	getTreeNodeValue(values, root->right, k1 , k2);
+	getTreeNodeValue(values, root->right, k1, k2);
 }
 
 int Solution::strStr(const char* source, const char* target)
@@ -782,8 +782,8 @@ int Solution::binarySearch(vector<int>& nums, int target)
 		{
 			mid = center;
 		}
-		
-		if (nums[center] < target )
+
+		if (nums[center] < target)
 		{
 			left = center + 1;
 		}
@@ -793,4 +793,36 @@ int Solution::binarySearch(vector<int>& nums, int target)
 		}
 	}
 	return mid;
+}
+
+vector<vector<int>> Solution::permute(vector<int> nums)
+{
+	vector<vector<int>> v;
+	int j = nums.size() - 1;
+	if (j == -1)
+	{
+		v.push_back(nums);
+	}
+	else
+	{
+		percore(nums, 0, j, v);
+	}
+	return v;
+}
+
+void Solution::percore(vector<int> nums, int m, int n, vector<vector<int>>& v)
+{
+	if (m == n)
+	{
+		v.push_back(nums);
+	}
+	else
+	{
+		for (int i = m; i <= n; ++i)
+		{
+			swap(nums[i], nums[m]);
+			percore(nums, m + 1, n, v);
+			swap(nums[i], nums[m]);
+		}
+	}
 }

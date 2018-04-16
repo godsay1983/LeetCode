@@ -72,4 +72,6 @@ public:
 	void getTreeNodeValue(vector<int>& values, TreeNode* root, int k1, int k2);
 	int strStr(const char *source, const char *target);
 	int binarySearch(vector<int> &nums, int target);
+	vector<vector<int> > permute(vector<int> nums);
+	void percore(vector<int> nums, int m, int n, vector<vector<int>>&v);
 };

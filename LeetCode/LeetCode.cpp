@@ -43,5 +43,8 @@ int main()
 
 	vector<int> nums1 = {1, 2, 3, 3, 4, 5, 10};
 	int target = solution.binarySearch(nums1, 3);
+
+	vector<int> nums2 = {1, 2, 3};
+	vector<vector<int>> v = solution.permute(nums2);
 	return 0;
 }
