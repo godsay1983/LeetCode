@@ -74,4 +74,6 @@ public:
 	int binarySearch(vector<int> &nums, int target);
 	vector<vector<int> > permute(vector<int> nums);
 	void percore(vector<int> nums, int m, int n, vector<vector<int>>&v);
+	vector<vector<int>> permuteUnique(vector<int> &nums);
+	void perUniquecore(vector<int> nums, int m, int n, vector<vector<int>>&v);
 };

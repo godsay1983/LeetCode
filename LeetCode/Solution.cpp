@@ -826,3 +826,39 @@ void Solution::percore(vector<int> nums, int m, int n, vector<vector<int>>& v)
 		}
 	}
 }
+
+vector<vector<int>> Solution::permuteUnique(vector<int>& nums)
+{
+	vector<vector<int>> v;
+	int j = nums.size() - 1;
+	if (j == -1)
+	{
+		v.push_back(nums);
+	}
+	else
+	{
+		perUniquecore(nums, 0, j, v);
+	}
+	return v;
+}
+
+void Solution::perUniquecore(vector<int> nums, int m, int n, vector<vector<int>>& v)
+{
+	if (m == n)
+	{
+		auto pos = find(v.begin(), v.end(), nums);
+		if (pos == v.end())
+		{
+			v.push_back(nums);
+		}
+	}
+	else
+	{
+		for (int i = m; i <= n; ++i)
+		{
+			swap(nums[i], nums[m]);
+			perUniquecore(nums, m + 1, n, v);
+			swap(nums[i], nums[m]);
+		}
+	}
+}
