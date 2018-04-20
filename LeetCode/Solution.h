@@ -76,4 +76,6 @@ public:
 	void percore(vector<int> nums, int m, int n, vector<vector<int>>&v);
 	vector<vector<int>> permuteUnique(vector<int> &nums);
 	void perUniquecore(vector<int> nums, int m, int n, vector<vector<int>>&v);
+	vector<vector<int>> subsets(vector<int>& nums);
+	void getSubsets(vector<int>& nums, int start, vector<int>& sub, vector<vector<int>>& subs);
 };
