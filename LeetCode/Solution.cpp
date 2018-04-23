@@ -882,3 +882,27 @@ void Solution::getSubsets(vector<int>& nums, int start, vector<int>& sub, vector
 		sub.pop_back();
 	}
 }
+
+vector<vector<int>> Solution::subsetsWithDup(vector<int>& nums)
+{
+	sort(nums.begin(), nums.end());
+	vector<vector<int>> subs;
+	vector<int> sub;
+	getSubsetsWithDup(nums, 0, sub, subs);
+	return subs;
+}
+
+void Solution::getSubsetsWithDup(vector<int>& nums, int start, vector<int>& sub, vector<vector<int>>& subs)
+{
+	auto pos = find(subs.begin(), subs.end(), sub);
+	if (pos == subs.end())
+	{
+		subs.push_back(sub);
+	}
+	for (int i = start; i < nums.size(); ++i)
+	{
+		sub.push_back(nums[i]);
+		getSubsetsWithDup(nums, i + 1, sub, subs);
+		sub.pop_back();
+	}
+}

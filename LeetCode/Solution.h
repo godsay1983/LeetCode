@@ -78,4 +78,6 @@ public:
 	void perUniquecore(vector<int> nums, int m, int n, vector<vector<int>>&v);
 	vector<vector<int>> subsets(vector<int>& nums);
 	void getSubsets(vector<int>& nums, int start, vector<int>& sub, vector<vector<int>>& subs);
+	vector<vector<int>> subsetsWithDup(vector<int> &nums);
+	void getSubsetsWithDup(vector<int>& nums, int start, vector<int>& sub, vector<vector<int>>& subs);
 };
