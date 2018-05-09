@@ -46,5 +46,7 @@ int main()
 
 	vector<int> nums2 = {1, 2, 3};
 	vector<vector<int>> v = solution.permute(nums2);
+
+	auto resultDicesSum = solution.dicesSum(3);
 	return 0;
 }
