@@ -913,7 +913,7 @@ void Solution::getSubsetsWithDup(vector<int>& nums, int start, vector<int>& sub,
             return vector<pair<int, double> >();
         }
 
-        long long total = Solution::powOf6(n);
+        long long total = powOf6(n);
         vector<vector<long long>> dp(n + 1, vector<long long>(6 * n + 1, 0));
         dp[1][1] = 1;
         dp[1][2] = 1;
