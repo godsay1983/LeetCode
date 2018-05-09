@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <vector>
 #include <string>
+#include "NestedInteger.h"
 
 using namespace std;
 
@@ -82,4 +83,6 @@ public:
 	void getSubsetsWithDup(vector<int>& nums, int start, vector<int>& sub, vector<vector<int>>& subs);
 	vector<pair<int, double>> dicesSum(int n);
 	long long powOf6(int n);
+	vector<int> flatten(vector<NestedInteger> &nestedList);
+	void doFlat(vector<int> &intList, const vector<NestedInteger> &nestedList);
 };

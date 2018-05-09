@@ -24,12 +24,18 @@
     <ClCompile Include="MinStack.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="NestedInteger.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Solution.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="MinStack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NestedInteger.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
