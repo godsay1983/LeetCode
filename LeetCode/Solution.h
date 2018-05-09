@@ -80,4 +80,6 @@ public:
 	void getSubsets(vector<int>& nums, int start, vector<int>& sub, vector<vector<int>>& subs);
 	vector<vector<int>> subsetsWithDup(vector<int> &nums);
 	void getSubsetsWithDup(vector<int>& nums, int start, vector<int>& sub, vector<vector<int>>& subs);
+	vector<pair<int, double>> dicesSum(int n);
+	long long powOf6(int n);
 };
