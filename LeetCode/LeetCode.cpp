@@ -2,6 +2,7 @@
 //
 #include "Solution.h"
 #include <iostream>
+#include "LFUCache.h"
 
 int main()
 {
@@ -48,5 +49,22 @@ int main()
 	vector<vector<int>> v = solution.permute(nums2);
 
 	auto resultDicesSum = solution.dicesSum(3);
+
+	LFUCache lfuCache(3);
+	lfuCache.set(1, 10);
+	lfuCache.set(2, 20);
+	lfuCache.set(3, 30);
+	cout << lfuCache.get(1) << std::endl;
+	lfuCache.set(4, 40);
+	cout << lfuCache.get(4) << std::endl;
+	cout << lfuCache.get(3) << std::endl;
+	cout << lfuCache.get(2) << std::endl;
+	cout << lfuCache.get(1) << std::endl;
+	lfuCache.set(5, 50);
+	cout << lfuCache.get(1) << std::endl;
+	cout << lfuCache.get(2) << std::endl;
+	cout << lfuCache.get(3) << std::endl;
+	cout << lfuCache.get(4) << std::endl;
+	cout << lfuCache.get(5) << std::endl;
 	return 0;
 }

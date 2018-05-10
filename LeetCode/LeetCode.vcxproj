@@ -152,11 +152,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LeetCode.cpp" />
+    <ClCompile Include="LFUCache.cpp" />
     <ClCompile Include="MinStack.cpp" />
     <ClCompile Include="NestedInteger.cpp" />
     <ClCompile Include="Solution.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LFUCache.h" />
     <ClInclude Include="MinStack.h" />
     <ClInclude Include="NestedInteger.h" />
     <ClInclude Include="Solution.h" />
