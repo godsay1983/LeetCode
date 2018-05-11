@@ -85,4 +85,5 @@ public:
 	long long powOf6(int n);
 	vector<int> flatten(vector<NestedInteger> &nestedList);
 	void doFlat(vector<int> &intList, const vector<NestedInteger> &nestedList);
+	bool searchMatrix(vector<vector<int>> &matrix, int target);
 };

@@ -996,3 +996,22 @@ void Solution::doFlat(vector<int>& intList, const vector<NestedInteger>& nestedL
 		}
 	}
 }
+
+bool Solution::searchMatrix(vector<vector<int>>& matrix, int target)
+{
+	int line = -1;
+	for (int i = 0; i < matrix.size(); ++i)
+	{
+		if (matrix[i].front() <= target && target <= matrix[i].back())
+		{
+			line = i;
+			break;
+		}
+	}
+	if (line > -1)
+	{
+		auto it = find(matrix[line].begin(), matrix[line].end(), target);
+		return it != matrix[line].end();
+	}
+	return false;
+}
