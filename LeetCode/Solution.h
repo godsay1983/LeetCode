@@ -86,4 +86,5 @@ public:
 	vector<int> flatten(vector<NestedInteger> &nestedList);
 	void doFlat(vector<int> &intList, const vector<NestedInteger> &nestedList);
 	bool searchMatrix(vector<vector<int>> &matrix, int target);
+	bool isInterleave(string &s1, string &s2, string &s3);
 };
