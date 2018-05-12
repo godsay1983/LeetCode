@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include "NestedInteger.h"
+#include "Interval.h"
 
 using namespace std;
 
@@ -87,4 +88,5 @@ public:
 	void doFlat(vector<int> &intList, const vector<NestedInteger> &nestedList);
 	bool searchMatrix(vector<vector<int>> &matrix, int target);
 	bool isInterleave(string &s1, string &s2, string &s3);
+	vector<Interval> insert(vector <Interval> &intervals, Interval newInterval);
 };

@@ -1050,3 +1050,28 @@ bool Solution::isInterleave(string& s1, string& s2, string& s3)
 	}
 	return dp[m][n];
 }
+
+vector<Interval> Solution::insert(vector<Interval>& intervals, Interval newInterval)
+{
+	vector<Interval> resultIntervals;
+	for (auto interval : intervals)
+	{
+		if (interval.end < newInterval.start)
+		{
+			resultIntervals.push_back(interval);
+		}
+		else if (interval.start > newInterval.end)
+		{
+			resultIntervals.push_back(newInterval);
+			newInterval = interval;
+		}
+		else
+		{
+			int nStart = min(interval.start, newInterval.start);
+			int nEnd = max(interval.end, newInterval.end);
+			newInterval = Interval(nStart, nEnd);
+		}
+	}
+	resultIntervals.push_back(newInterval);
+	return resultIntervals;
+}
